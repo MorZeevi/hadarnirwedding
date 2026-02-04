@@ -1,0 +1,239 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.rsvp {
+  @include section-padding;
+  background: linear-gradient(180deg, $background 0%, $accent-light 100%);
+
+  &__container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $font-size-3xl;
+    font-weight: 300;
+    color: $primary;
+    text-align: center;
+    margin-bottom: $spacing-sm;
+
+    @include mobile {
+      font-size: $font-size-2xl;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-base;
+    color: rgba($text-dark, 0.7);
+    text-align: center;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__form {
+    background: $text-light;
+    border-radius: $border-radius-lg;
+    padding: $spacing-lg;
+    box-shadow: $box-shadow-lg;
+  }
+
+  &__field {
+    margin-bottom: $spacing-md;
+
+    &--checkbox {
+      margin-top: $spacing-md;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: $font-size-base;
+    font-weight: 500;
+    color: $text-dark;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__input,
+  &__select {
+    @include input-base;
+    width: 100%;
+    direction: rtl;
+  }
+
+  &__attendance {
+    margin: $spacing-lg 0;
+    text-align: center;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: $spacing-sm;
+    justify-content: center;
+    margin-top: $spacing-sm;
+  }
+
+  &__button {
+    @include button-base;
+    flex: 1;
+    max-width: 150px;
+    background: transparent;
+    border: 2px solid $primary;
+    color: $primary;
+
+    &:hover {
+      background: rgba($primary, 0.1);
+    }
+
+    &--active {
+      background: $primary;
+      color: $text-light;
+
+      &:hover {
+        background: $primary-dark;
+      }
+    }
+
+    &--attend.rsvp__button--active {
+      background: $primary;
+    }
+
+    &--decline.rsvp__button--active {
+      background: $text-dark;
+      border-color: $text-dark;
+    }
+  }
+
+  &__conditional {
+    animation: slideDown 0.3s ease;
+    padding: $spacing-md;
+    background: rgba($accent, 0.2);
+    border-radius: $border-radius;
+    margin-bottom: $spacing-md;
+  }
+
+  &__checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    cursor: pointer;
+    font-size: $font-size-base;
+    color: $text-dark;
+  }
+
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked + .rsvp__checkbox-custom {
+      background: $primary;
+      border-color: $primary;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__checkbox-custom {
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba($primary, 0.3);
+    border-radius: 4px;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+
+    &::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $text-light;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+  }
+
+  &__error {
+    color: $primary;
+    font-size: $font-size-sm;
+    text-align: center;
+    margin-bottom: $spacing-sm;
+    padding: $spacing-sm;
+    background: rgba($primary, 0.1);
+    border-radius: $border-radius;
+  }
+
+  &__submit {
+    @include button-base;
+    width: 100%;
+    background: $primary;
+    color: $text-light;
+
+    &:hover:not(:disabled) {
+      background: $primary-dark;
+    }
+
+    &:disabled {
+      background: rgba($text-dark, 0.3);
+    }
+  }
+
+  // Success state
+  &__success {
+    text-align: center;
+    padding: $spacing-xl;
+    background: $text-light;
+    border-radius: $border-radius-lg;
+    box-shadow: $box-shadow-lg;
+  }
+
+  &__success-icon {
+    width: 80px;
+    height: 80px;
+    background: $primary;
+    color: $text-light;
+    border-radius: 50%;
+    @include flex-center;
+    margin: 0 auto $spacing-md;
+    font-size: 2.5rem;
+    animation: scaleIn 0.5s ease;
+  }
+
+  &__success-title {
+    font-size: $font-size-2xl;
+    font-weight: 500;
+    color: $primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__success-text {
+    font-size: $font-size-lg;
+    color: rgba($text-dark, 0.7);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

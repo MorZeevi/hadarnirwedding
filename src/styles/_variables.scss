@@ -1,0 +1,38 @@
+// Color Palette
+$primary: #A00409;      // Deep burgundy/red
+$primary-dark: #700307; // Darker primary (for hover states)
+$background: #E0D4C4;   // Warm cream
+$accent: #FACBB9;       // Soft peach
+$accent-light: #FDE5DB; // Lighter accent
+
+// Text colors
+$text-dark: #2C2C2C;
+$text-light: #FFFFFF;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 3rem;
+$spacing-xl: 4rem;
+
+// Typography
+$font-family: 'Heebo', 'Rubik', sans-serif;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 2rem;
+$font-size-3xl: 2.5rem;
+$font-size-4xl: 3.5rem;
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Borders & Shadows
+$border-radius: 8px;
+$border-radius-lg: 16px;
+$box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+$box-shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.15);
