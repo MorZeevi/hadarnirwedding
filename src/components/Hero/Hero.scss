@@ -1,126 +1,315 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
+// ── Keyframe animations ──
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(-4px); }
+  50% { transform: translateY(4px); }
+}
+
+@keyframes gentle-sway {
+  0%, 100% { transform: rotate(-3deg) scale(1); }
+  50% { transform: rotate(3deg) scale(1.05); }
+}
+
 .hero {
-  position: relative;
-  min-height: 100vh;
+  background-color: $primary;
+  overflow-y: auto;
   @include flex-center;
-  background: linear-gradient(
-    135deg,
-    $primary 0%,
-    $primary-dark 50%,
-    $primary 100%
-  );
-  overflow: hidden;
+  padding: $spacing-sm;
+  
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-      radial-gradient(circle at 20% 80%, rgba($accent, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba($accent, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
-  }
-
-  &__content {
-    position: relative;
-    z-index: 1;
+  // ── White card with scalloped border ──
+  &__frame {
+    background: #fff;
+    max-width: 700px;
+    width: 100%;
     text-align: center;
-    color: $text-light;
-    padding: $spacing-md;
-  }
-
-  &__decorative-line {
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      $accent,
-      transparent
-    );
-    margin: $spacing-md auto;
-  }
-
-  &__title {
-    @include flex-column;
-    align-items: center;
-    gap: $spacing-xs;
-    margin-bottom: $spacing-sm;
-  }
-
-  &__name {
-    font-size: $font-size-4xl;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
+    padding: $spacing-xl $spacing-lg;
+    position: relative;
 
     @include tablet {
-      font-size: $font-size-3xl;
+      padding: $spacing-lg $spacing-md;
+      max-width: 600px;
     }
 
     @include mobile {
-      font-size: $font-size-2xl;
+      padding: $spacing-sm;
+      max-width: 100%;
     }
   }
 
-  &__ampersand {
+  // ── Frame border overlay ──
+  &__frame-border-top {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    object-fit: fit;
+    z-index: 1;
+  }
+
+  // ── Frame border overlay ──
+  &__frame-border-bottom {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    object-fit: fit;
+    rotate: 180deg;
+
+  }
+
+  // ── Decorative flowers ──
+  &__decoration {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+
+    &--top-left {
+      top: 0;
+      left: 0;
+      width: 230px;
+      height: auto;
+      transform: translate(-25%, -25%);
+
+      @include tablet {
+        width: 100px;
+      }
+
+      @include mobile {
+        width: 160px;
+        transform: translate(-20%, 50%);
+      }
+    }
+
+    &--bottom-right {
+      bottom: 0;
+      right: 0;
+      width: 180px;
+      height: auto;
+      transform: translate(20%, 25%);
+
+      @include tablet {
+        width: 140px;
+      }
+
+      @include mobile {
+        width: 180px;
+        transform: translate(45%, 20%);
+      }
+    }
+  }
+
+  // ── English cursive quote ──
+  &__quote {
+    font-family: 'Dancing Script', cursive;
+    font-size: $font-size-xl;
+    color: $primary;
+    line-height: 1.6;
+    margin-bottom: $spacing-lg;
+    direction: ltr;
+    color: #c23548;
+    margin-top: $spacing-lg;
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+    
+     &-subtext {
+      font-size: $font-size-sm;
+      color: #c23548;
+      font-family: 'POLIN';
+      color: $text-dark;
+      font-weight: 400;
+      font-style: normal;
+      direction: ltr;
+      margin-top: $spacing-xs;
+     }
+
+    @include mobile {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // ── Hebrew names ──
+  &__names {
+    font-family: 'Danidin', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: $primary;
+    direction: rtl;
+
+    @include tablet {
+      font-size: 3rem;
+    }
+
+    @include mobile {
+      font-size: 5rem;
+    }
+  }
+
+  // ── Invitation text ──
+  &__invitation {
+    font-family: $font-family;
+    font-size: $font-size-base;
+    color: $text-dark;
+    line-height: 1.8;
+    margin-bottom: $spacing-lg;
+    direction: rtl;
+
+    @include mobile {
+      font-size: $font-size-sm;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // ── Large date ──
+  &__date {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: $primary;
+    letter-spacing: 0.08em;
+    margin-bottom: $spacing-lg;
+    direction: ltr;
+
+    @include tablet {
+      font-size: 4rem;
+    }
+
+    @include mobile {
+      font-size: 3rem;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // ── Venue ──
+  &__venue {
+    margin-bottom: $spacing-lg;
+
+    @include mobile {
+      margin-bottom: $spacing-sm;
+
+    }
+  }
+
+  &__venue-name {
+    font-family: 'Playfair Display', serif;
     font-size: $font-size-2xl;
-    font-weight: 300;
-    color: $accent;
-    margin: $spacing-xs 0;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: $spacing-xs;
 
     @include mobile {
       font-size: $font-size-xl;
     }
   }
 
-  &__subtitle {
-    font-size: $font-size-xl;
-    font-weight: 400;
-    letter-spacing: 0.2em;
-    color: $accent;
+  &__venue-address {
+    font-family: $font-family;
+    font-size: $font-size-base;
+    color: $text-dark;
+    direction: rtl;
+
+    @include mobile {
+      font-size: $font-size-sm;
+    }
+  }
+
+  // ── Timeline row (3 icon columns, RTL) ──
+  &__timeline {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
     margin-bottom: $spacing-lg;
+    direction: ltr;
+
+    @include mobile {
+      gap: $spacing-sm;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__timeline-item {
+    @include flex-column;
+    align-items: center;
+    gap: $spacing-xs;
+    flex: 0 1 auto;
+    min-width: 80px;
+  }
+
+  &__timeline-icon {
+    width: 70px;
+    height: 70px;
+    @include flex-center;
+
+    @include mobile {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  &__timeline-time {
+    font-family: 'Playfair Display', serif;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $text-dark;
 
     @include mobile {
       font-size: $font-size-lg;
     }
   }
 
-  &__date {
-    @include flex-column;
-    align-items: center;
-    gap: $spacing-xs;
-  }
-
-  &__date-label {
+  &__timeline-label {
+    font-family: $font-family;
     font-size: $font-size-base;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    opacity: 0.9;
-  }
-
-  &__date-value {
-    font-size: $font-size-2xl;
-    font-weight: 500;
-    letter-spacing: 0.05em;
+    color: $text-dark;
+    direction: rtl;
 
     @include mobile {
-      font-size: $font-size-xl;
+      font-size: $font-size-sm;
     }
+  }
+
+  // ── SVG icons ──
+  &__icon {
+    width: 100%;
+    height: 100%;
+
+    &--saxophone {
+      animation: sway 2s ease-in-out infinite;
+    }
+
+    &--rings {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    &--bouquet {
+      animation: gentle-sway 2.5s ease-in-out infinite;
+    }
+  }
+
+  // ── Footer text ──
+  &__footer-text {
+    font-family: $font-family;
+    font-size: $font-size-base;
+    color: $text-dark;
+    line-height: 1.8;
+    direction: rtl;
+
+    @include mobile {
+      font-size: $font-size-sm;
+    }
+  }
+
+  @include mobile {
+    padding: $spacing-sm / 2;
   }
 }
