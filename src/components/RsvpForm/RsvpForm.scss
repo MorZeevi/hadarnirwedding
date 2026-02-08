@@ -6,7 +6,6 @@
   background: $background;
   position: relative;
   text-align: center;
-  min-height: 100vh;
   overflow-x: clip;
   overflow-y: visible;
 
@@ -235,6 +234,7 @@
     padding: $spacing-xl;
     background: $text-light;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
