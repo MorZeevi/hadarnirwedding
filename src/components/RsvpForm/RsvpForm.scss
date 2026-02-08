@@ -234,6 +234,9 @@
     text-align: center;
     padding: $spacing-xl;
     background: $text-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__success-icon {

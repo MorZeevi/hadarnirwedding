@@ -87,7 +87,7 @@ function RsvpForm() {
             </h2>
             <p className="rsvp__success-text">
               {formData.attending
-                ? 'הפרטים שלכם עודכנו! נשמח לראותכם באירוע!'
+                ? 'הפרטים שלכם עודכנו נתראה באירוע'
                 : 'הפרטים שלכם עודכנו! תודה שעדכנתם אותנו.'}
             </p>
           </div>
