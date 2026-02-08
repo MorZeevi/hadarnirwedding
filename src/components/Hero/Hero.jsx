@@ -46,7 +46,7 @@ function Hero() {
           You are the sunshine of my life,
           That&rsquo;s why I&rsquo;ll always be around...
           <br />
-          <p className="hero__quote-subtext"> STEVE WONDER</p>
+          {/* <p className="hero__quote-subtext"> STEVE WONDER</p> */}
         </p>
 
         <h1 className="hero__names">הדר וניר</h1>

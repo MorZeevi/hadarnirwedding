@@ -7,7 +7,8 @@
   position: relative;
   padding-inline-start: 2rem;
   padding-inline-end: 2rem;
-  overflow-y: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
 
     // ── Decorative flowers ──
     &__decoration {
