@@ -28,7 +28,7 @@ function RsvpForm() {
         defaults: { ease: 'power2.out' },
         scrollTrigger: {
           trigger: '.rsvp',
-          start: 'top 80%',
+          start: 'top top',
           once: true,
         },
       });
