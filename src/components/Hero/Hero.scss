@@ -132,6 +132,7 @@
     font-weight: 700;
     color: $primary;
     direction: rtl;
+    line-height: normal;
 
     @include tablet {
       font-size: 3rem;
@@ -147,13 +148,13 @@
     font-family: $font-family;
     font-size: $font-size-base;
     color: $text-dark;
-    line-height: 1.8;
+    line-height: 1.6;
     margin-bottom: $spacing-lg;
     direction: rtl;
 
     @include mobile {
       font-size: $font-size-sm;
-      margin-bottom: $spacing-sm;
+      margin-bottom: 0;
     }
   }
 
@@ -166,14 +167,14 @@
     letter-spacing: 0.08em;
     margin-bottom: $spacing-lg;
     direction: ltr;
-
+    text-shadow: 2px 2px 0px #ffc1c2;
     @include tablet {
       font-size: 4rem;
     }
 
     @include mobile {
       font-size: 3.5rem;
-      margin-bottom: $spacing-sm;
+      margin-bottom: 0;
     }
   }
 
@@ -193,9 +194,11 @@
     font-weight: 700;
     color: $primary;
     margin-bottom: $spacing-xs;
+    text-shadow: 2px 2px 0px #ffc1c2;
 
     @include mobile {
-      font-size: $font-size-xl;
+      font-size: $font-size-2xl;
+      margin-bottom: 0;
     }
   }
 
@@ -222,6 +225,7 @@
       column-gap: $spacing-sm;
       row-gap: 0;
       margin-bottom: $spacing-sm;
+      margin-top: $spacing-sm;
     }
   }
 
@@ -231,6 +235,10 @@
     gap: $spacing-xs;
     flex: 0 1 auto;
     min-width: 80px;
+
+    @include mobile {
+      gap: 0;
+    }
   }
 
   &__timeline-icon {
@@ -240,7 +248,8 @@
 
     @include mobile {
       width: 55px;
-      height: 55px;
+      height: 55px;    
+
     }
   }
 
@@ -277,7 +286,7 @@
     font-family: $font-family;
     font-size: $font-size-base;
     color: $text-dark;
-    line-height: 1.8;
+    line-height: 1.6;
     direction: rtl;
     margin-bottom: $spacing-sm * 2;
     @include mobile {

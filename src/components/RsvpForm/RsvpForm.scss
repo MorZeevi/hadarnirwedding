@@ -6,6 +6,7 @@
   background: $background;
   position: relative;
   text-align: center;
+  height: 100vh;
 
   &__container {
     max-width: 500px;
@@ -26,7 +27,7 @@
   }
 
   &__explanation {
-    font-size: $font-size-base;
+    font-size: $font-size-sm;
     text-align: center;
     margin-bottom: $spacing-md;
     padding-inline-start: $spacing-sm;
@@ -102,6 +103,8 @@
       background: $text-dark;
       border-color: $text-dark;
     }
+
+
   }
 
   &__conditional {
