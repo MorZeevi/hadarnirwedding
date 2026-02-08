@@ -78,6 +78,7 @@ function RsvpForm() {
       <section className="rsvp red-border">
         <img src="/frame.png" alt="" className="frame-border-top" />
         <img src="/frame.png" alt="" className="frame-border-bottom" />
+
         <div className="rsvp__container">
           <div className="rsvp__success">
             <div className="rsvp__success-icon">✓</div>
@@ -99,6 +100,8 @@ function RsvpForm() {
     <section className="rsvp red-border">
       <img src="/frame.png" alt="" className="frame-border-top" />
       <img src="/frame.png" alt="" className="frame-border-bottom" />
+      <img src="/bolbolflower.png" alt="" className="rsvp__decoration rsvp__decoration--top-left" />
+      <img src="/doubleDisco.png" alt="" className="rsvp__decoration rsvp__decoration--bottom-right" />
       <div className="rsvp__container">
         <h2 className="rsvp__title">אשרו הגעה</h2>
      

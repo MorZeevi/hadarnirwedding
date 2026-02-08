@@ -7,6 +7,48 @@
   position: relative;
   text-align: center;
   height: 100vh;
+  overflow-y: hidden;
+
+    // ── Decorative flowers ──
+    &__decoration {
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+  
+      &--top-left {
+        top: 0;
+        left: 0;
+        width: 230px;
+        height: auto;
+        transform: translate(-25%, -25%);
+  
+        @include tablet {
+          width: 100px;
+        }
+  
+        @include mobile {
+          width: 140px;
+          transform: translate(-20%, 100%);
+        }
+      }
+  
+      &--bottom-right {
+        bottom: 0;
+        right: 0;
+        width: 220px;
+        height: auto;
+        transform: translate(-10%, 25%);
+  
+        @include tablet {
+          width: 140px;
+        }
+  
+        @include mobile {
+          width: 170px;
+          transform: translate(0%, 10%);
+        }
+      }
+    }
 
   &__container {
     max-width: 500px;
