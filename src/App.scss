@@ -2,7 +2,7 @@
 @use './styles/mixins' as *;
 
 .app {
-  min-height: 100vh;
+  min-height: 100dvh;
 
   &__footer {
     background: $primary;
@@ -19,7 +19,6 @@
 
   &__footer-logo {
     width: 70px;
-    margin-top: $spacing-sm;
     margin-right: 0.5rem;
   
  
@@ -27,5 +26,11 @@
 
   .greeting {
     font-size: $font-size-base;
+  }
+
+  .developed-by {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem; 
   }
 }
