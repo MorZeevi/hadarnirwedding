@@ -22,7 +22,7 @@ function Map() {
       const tl = gsap.timeline({
         defaults: { ease: 'power2.out' },
         scrollTrigger: {
-          trigger: '.map',
+          trigger: sectionRef.current,
           start: 'top top',
           once: true,
         },
@@ -49,7 +49,7 @@ function Map() {
             y: 20,
             ease: 'none',
             scrollTrigger: {
-              trigger: '.map',
+              trigger: sectionRef.current,
               start: 'top bottom',
               end: 'bottom top',
               scrub: true,

@@ -29,7 +29,7 @@ function RsvpForm() {
       const tl = gsap.timeline({
         defaults: { ease: 'power2.out' },
         scrollTrigger: {
-          trigger: '.rsvp',
+          trigger: sectionRef.current,
           start: 'top top',
           once: true,
         },
@@ -160,7 +160,7 @@ function RsvpForm() {
         <h2 className="rsvp__title">אשרו הגעה</h2>
 
     <p className="rsvp__explanation">
-    <p className="bold">נשמח לדעת אם תגיעו, כמה תהיו, <br /> והאם באים עם רכב.</p>
+    <span className="bold">נשמח לדעת אם תגיעו, כמה תהיו, <br /> והאם באים עם רכב.</span>
       ♥  אנחנו רוכשים כרטיסי חניה מראש, תוכלו לעדכן את התשובה שלכם עד שמונה ימים לפני החתונה.
       <br />
      זכרו לבקש את הכרטיס שלכם כשתגיעו למקום.</p>
