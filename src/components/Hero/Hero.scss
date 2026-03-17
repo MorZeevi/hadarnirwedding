@@ -70,8 +70,8 @@
       }
 
       @include mobile {
-        width: 100px;
-        transform: translate(-8%, 40%);
+        width: 90px;
+        transform: translate(-8%, 20%);
       }
     }
 
@@ -289,6 +289,31 @@
     direction: rtl;
     margin-bottom: $spacing-sm * 2;
     @include mobile {
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__btns-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+  }
+
+  &__approval-btn,
+  &__navigation-btn {
+    background-color: $primary;
+    color: $text-light;
+    border: none;
+    font-family: $font-family;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-base;
+    border-radius: 8px;
+    cursor: pointer;
+
+    @include mobile {
+      padding: $spacing-xs $spacing-sm;
       font-size: $font-size-sm;
     }
   }

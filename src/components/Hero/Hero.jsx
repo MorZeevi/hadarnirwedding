@@ -105,12 +105,12 @@ function Hero() {
         <img src="/discoflower.png" alt="" className="hero__decoration hero__decoration--top-left" />
         <img src="/whiteflower.png" alt="" className="hero__decoration hero__decoration--bottom-right" />
 
-        <p className="hero__quote">
+        {/* <p className="hero__quote">
           You are the sunshine of my life,
           That&rsquo;s why I&rsquo;ll always be around...
           <br />
           {/* <p className="hero__quote-subtext"> STEVE WONDER</p> */}
-        </p>
+        {/* </p> */} 
 
         <h1 className="hero__names">הדר וניר</h1>
 
@@ -120,7 +120,7 @@ function Hero() {
           שתתקיים ביום רביעי, כ&quot;ב באדר תשפ&quot;ו
         </p>
 
-        <div className="hero__date">11 03 2026</div>
+        <div className="hero__date">15 04 2026</div>
 
         <div className="hero__venue">
           <h2 className="hero__venue-name">Noor Jaffa</h2>
@@ -158,6 +158,20 @@ function Hero() {
           <br />
           ניר, הדר והמשפחות המאושרות
         </p>
+        <div className="hero__btns-wrapper">
+          <button
+            className="hero__approval-btn"
+            onClick={() => document.querySelector('.rsvp').scrollIntoView({ behavior: 'smooth' })}
+          >
+            לאישור הגעה
+          </button>
+          <button
+            className="hero__navigation-btn"
+            onClick={() => document.querySelector('.map').scrollIntoView({ behavior: 'smooth' })}
+          >
+            לדרכי הגעה
+          </button>
+        </div>
         </div>
 
       </div>
